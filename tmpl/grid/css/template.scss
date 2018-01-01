@@ -1,0 +1,80 @@
+$featured: #65dcdf;
+$white: #fff;
+.articleGgallery{
+  &.grid-gallery{
+    .grid-gallery-image{
+      margin-bottom: 2px;
+      padding-left: 1px !important;
+      padding-right: 1px !important;
+      height: 200px;
+
+      figure.plg-image{
+        position: relative;
+        margin-bottom: 0;
+        width: 100%;
+        height: 100%;
+        img{
+          width: 100% !important;
+          height: 100% !important;
+          -o-object-fit: cover;
+             object-fit: cover;
+        }
+        figcaption{
+          background-color: $featured;
+          color: $white;
+          opacity: 0;
+          -webkit-transform: scale(0.5);
+                  transform: scale(0.5);
+          transition: all .3s ease-in-out;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          -o-transition: all .3s ease-in-out;
+        }
+        a, figcaption{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        &:hover{
+          > figcaption{
+            opacity: 0.7;
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            transition: all .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+// se si trova dentro una card
+.card{
+  .articleGgallery.grid-gallery{
+    .grid-gallery-image{
+      -webkit-box-flex: 0 !important;
+          -ms-flex: 0 0 25% !important;
+              flex: 0 0 25% !important;
+      max-width: 25% !important;
+      height: 60px !important;
+      .plg-image {
+        width: 100%;
+      }
+    }
+    // se schermo molto piccolo o ristretto
+    &.largeGallery{
+      .grid-gallery-image{
+        -webkit-box-flex: 0 !important;
+            -ms-flex: 0 0 16.666666% !important;
+                flex: 0 0 16.666666% !important;
+        max-width: 16.666666% !important;
+        height: 100px !important;
+      }
+    }
+  }
+}

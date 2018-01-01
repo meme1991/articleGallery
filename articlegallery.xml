@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_ARTICLEGALLERY</name>
+	<author>SPEDI srl</author>
+	<creationDate>Gennaio 2018</creationDate>
+  <copyright>Copyright (C) SPEDI srl</copyright>
+	<license>MIT license</license>
+  <authorEmail>sviluppo@spedi.it</authorEmail>
+	<authorUrl>https://www.spedi.it</authorUrl>
+	<version>3.0.0</version>
+	<description>PLG_CONTENT_ARTICLEGALLERY_DESC</description>
+	<files>
+		<filename plugin="articlegallery">articlegallery.php</filename>
+		<folder>tmpl</folder>
+		<folder>dist</folder>
+		<folder>language</folder>
+	</files>
+</extension>
