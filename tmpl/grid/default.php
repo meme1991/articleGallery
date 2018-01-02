@@ -98,7 +98,7 @@ $document->addScriptDeclaration("
 				<figure class="plg-image py-3 d-flex justify-content-center align-items-center">
 					<a href="<?php echo JRoute::_(PhocaGalleryRoute::getCategoryRoute($catResult[0]->id, $catResult[0]->alias)); ?>" class="text-center">
 						<i class="fa fa-plus fa-2x text-primary d-block" aria-hidden="true"></i>
-						<p class="b-block text-primary font-weight-light mb-0"><?php echo JText::_('PLG_CONTENT_ARTICLEGALLERY_MORE') ?></p>
+						<p class="b-block text-primary font-weight-light mb-0">Vedi di più</p>
 					</a>
 				</figure>
 			</div>
