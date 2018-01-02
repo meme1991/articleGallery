@@ -14,6 +14,17 @@ defined('_JEXEC') or die('Restricted access');
 //$document = JFactory::getDocument();
 $tmpl     = JFactory::getApplication()->getTemplate();
 JHtml::_('jquery.framework');
+if(isset($catResult)){
+	if (!JComponentHelper::isEnabled('com_phocagallery', true)) {
+		return JError::raiseError(JText::_('Phoca Gallery Error'), JText::_('Phoca Gallery is not installed on your system'));
+	}
+	if (! class_exists('PhocaGalleryLoader')) {
+	    require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_phocagallery'.DS.'libraries'.DS.'loader.php');
+	}
+	phocagalleryimport('phocagallery.path.path');
+	phocagalleryimport('phocagallery.path.route');
+	phocagalleryimport('phocagallery.library.library');
+}
 // magnificPopup
 $extensionPath = '/templates/'.$tmpl.'/dist/magnific/';
 if(file_exists(JPATH_SITE.$extensionPath)){
@@ -82,5 +93,16 @@ $document->addScriptDeclaration("
       </figure>
     </div>
     <?php endforeach; ?>
+		<?php if(isset($catResult)) : ?>
+			<div class="cat-link grid-gallery-image col-12 col-sm-6 col-md-<?php echo $item['col'] ?> bg-light">
+				<figure class="plg-image py-3 d-flex justify-content-center align-items-center">
+					<a href="<?php echo JRoute::_(PhocaGalleryRoute::getCategoryRoute($catResult[0]->id, $catResult[0]->alias)); ?>" class="text-center">
+						<i class="fa fa-plus fa-2x text-primary d-block" aria-hidden="true"></i>
+						<p class="b-block text-primary font-weight-light mb-0"><?php echo JText::_('PLG_CONTENT_ARTICLEGALLERY_MORE') ?></p>
+					</a>
+				</figure>
+			</div>
+		<?php endif; ?>
+
   </div>
 </div>

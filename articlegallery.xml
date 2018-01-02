@@ -15,4 +15,8 @@
 		<folder>dist</folder>
 		<folder>language</folder>
 	</files>
+	<languages folder="language">
+		<language tag="it-IT">it-IT/it-IT.plg_content_articlegallery.ini</language>
+		<language tag="it-IT">it-IT/it-IT.plg_content_articlegallery.sys.ini</language>
+	</languages>
 </extension>

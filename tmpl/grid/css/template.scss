@@ -1,3 +1,11 @@
+/**
+ * @version    3.0.0
+ * @package    SPEDI Article Gallery
+ * @author     SPEDI srl - http://www.spedi.it
+ * @copyright  Copyright (c) Spedi srl.
+ * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ */
+
 $featured: #65dcdf;
 $white: #fff;
 .articleGgallery{
@@ -30,7 +38,10 @@ $white: #fff;
           -moz-transition: all .3s ease-in-out;
           -o-transition: all .3s ease-in-out;
         }
-        a, figcaption{
+        a{
+          text-decoration: none;
+        }
+        a.magnific-overlay, figcaption{
           position: absolute;
           top: 0;
           left: 0;
@@ -66,7 +77,7 @@ $white: #fff;
         width: 100%;
       }
     }
-    // se schermo molto piccolo o ristretto
+    // se molto grandi > 576px
     &.largeGallery{
       .grid-gallery-image{
         -webkit-box-flex: 0 !important;
@@ -75,6 +86,10 @@ $white: #fff;
         max-width: 16.666666% !important;
         height: 100px !important;
       }
+    }
+    .cat-link{
+      //display: none;
+      font-size: 12px;
     }
   }
 }

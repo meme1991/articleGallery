@@ -11,18 +11,20 @@
 defined('_JEXEC') or die;
 
 //asset
-$tmpl     = JFactory::getApplication()->getTemplate();
+$tmpl = JFactory::getApplication()->getTemplate();
 JHtml::_('jquery.framework');
 
-if (!JComponentHelper::isEnabled('com_phocagallery', true)) {
-	return JError::raiseError(JText::_('Phoca Gallery Error'), JText::_('Phoca Gallery is not installed on your system'));
+if(isset($catResult)){
+	if (!JComponentHelper::isEnabled('com_phocagallery', true)) {
+		return JError::raiseError(JText::_('Phoca Gallery Error'), JText::_('Phoca Gallery is not installed on your system'));
+	}
+	if (! class_exists('PhocaGalleryLoader')) {
+	    require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_phocagallery'.DS.'libraries'.DS.'loader.php');
+	}
+	phocagalleryimport('phocagallery.path.path');
+	phocagalleryimport('phocagallery.path.route');
+	phocagalleryimport('phocagallery.library.library');
 }
-if (! class_exists('PhocaGalleryLoader')) {
-    require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_phocagallery'.DS.'libraries'.DS.'loader.php');
-}
-phocagalleryimport('phocagallery.path.path');
-phocagalleryimport('phocagallery.path.route');
-phocagalleryimport('phocagallery.library.library');
 // phocagalleryimport('phocagallery.text.text');
 // phocagalleryimport('phocagallery.access.access');
 // phocagalleryimport('phocagallery.file.file');
