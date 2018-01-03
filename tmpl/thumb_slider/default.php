@@ -104,7 +104,7 @@ $document->addScriptDeclaration("
 			<?php if(isset($catResult)) : ?>
 				<div class="swiper-slide d-flex align-items-center justify-content-center bg-light" style="height: <?php echo $item['hSlider'] ?>">
 					<a href="<?php echo JRoute::_(PhocaGalleryRoute::getCategoryRoute($catResult[0]->id, $catResult[0]->alias)); ?>" class="text-center">
-						<i class="fa fa-plus fa-2x text-primary d-block" aria-hidden="true"></i>
+						<i class="far fa-plus fa-2x text-primary d-block"></i>
 						<p class="b-block text-primary font-weight-light mb-0">Vedi di più</p>
 					</a>
 				</div>

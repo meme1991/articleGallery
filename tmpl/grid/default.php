@@ -86,7 +86,7 @@ $document->addScriptDeclaration("
       <figure class="plg-image">
         <img src="<?php echo JUri::base(true)."/images/phocagallery/".$img->filename; ?>" alt="<?php echo $img->title ?>" class="plg-no-lightbox" />
         <figcaption class="d-flex justify-content-center align-items-center">
-					<i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
+					<i class="fas fa-image fa-2x"></i>
           <!-- <h3><?php //echo $img->title ?></h3> -->
         </figcaption>
         <a class="magnific-overlay" title="<?php echo $img->title ?>" href="<?php echo JUri::base(true)."/images/phocagallery/".$img->filename; ?>"></a>
@@ -97,7 +97,7 @@ $document->addScriptDeclaration("
 			<div class="cat-link grid-gallery-image col-12 col-sm-6 col-md-<?php echo $item['col'] ?> bg-light">
 				<figure class="plg-image py-3 d-flex justify-content-center align-items-center">
 					<a href="<?php echo JRoute::_(PhocaGalleryRoute::getCategoryRoute($catResult[0]->id, $catResult[0]->alias)); ?>" class="text-center">
-						<i class="fa fa-plus fa-2x text-primary d-block" aria-hidden="true"></i>
+						<i class="far fa-plus fa-2x text-primary d-block"></i>
 						<p class="b-block text-primary font-weight-light mb-0">Vedi di più</p>
 					</a>
 				</figure>
