@@ -20,7 +20,7 @@ class plgContentArticleGallery extends JPlugin {
 	var $plg_name = "articlegallery";
 	var $plg_tag  = "articleGallery";
 
-	function plgContentArticleGallery( &$subject, $params ){
+	function __construct( &$subject, $params ){
 		parent::__construct( $subject, $params );
 
 		// Define the DS constant under Joomla! 3.0+
