@@ -45,6 +45,7 @@ class plgContentArticleGallery extends JPlugin {
 		//$siteTemplate = $mainframe->getTemplate();
 		//$menu           = $mainframe->getMenu();
 		//$active         = $mainframe->getMenu()->getActive();
+		$view         = $mainframe->input->get('view');
 
 		//var_dump($active);
 
@@ -217,22 +218,47 @@ class plgContentArticleGallery extends JPlugin {
 		for($k=0;$k<$count_matches;$k++){
 			// Fetch the template
 			$item        = $param[$k];
-			$PlgTmplName = $item['tmpl'];
+			if($view != "article"){
+				$row->text = str_replace($item['tag'], '', $row->text);
+			}else{
+				$PlgTmplName = $item['tmpl'];
 
-			$galleryId = substr(md5($k.$item['tag']), 1, 5);
+				$galleryId = substr(md5($k.$item['tag']), 1, 5);
+
+				// recupero del template
+				ob_start();
+				$templatePath = __DIR__.DS.'tmpl'.DS.$PlgTmplName.'/default.php';
+				include ($templatePath);
+				$getTemplate = ob_get_contents();
+				ob_end_clean();
+
+				// Output
+				$plg_html = $getTemplate;
+				// Do the replace
+				$row->text = str_replace($item['tag'], $plg_html, $row->text);
+			}
+		}
+
+		
+		//for($k=0;$k<$count_matches;$k++){
+			// Fetch the template
+		//	$item        = $param[$k];
+		//	$PlgTmplName = $item['tmpl'];
+
+		//	$galleryId = substr(md5($k.$item['tag']), 1, 5);
 
 			// recupero del template
-			ob_start();
-			$templatePath = __DIR__.DS.'tmpl'.DS.$PlgTmplName.'/default.php';
-			include ($templatePath);
-			$getTemplate = ob_get_contents();
-			ob_end_clean();
+		//	ob_start();
+		//	$templatePath = __DIR__.DS.'tmpl'.DS.$PlgTmplName.'/default.php';
+		//	include ($templatePath);
+		//	$getTemplate = ob_get_contents();
+		//	ob_end_clean();
 
 			// Output
-			$plg_html = $getTemplate;
+		//	$plg_html = $getTemplate;
 			// Do the replace
-			$row->text = str_replace($item['tag'], $plg_html, $row->text);
-		}
+		//	$row->text = str_replace($item['tag'], $plg_html, $row->text);
+		//}
 
 	} // END FUNCTION
 
