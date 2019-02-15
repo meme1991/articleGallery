@@ -1,0 +1,63 @@
+/**
+ * @version    3.0.0
+ * @package    SPEDI Article Gallery
+ * @author     SPEDI srl - http://www.spedi.it
+ * @copyright  Copyright (c) Spedi srl.
+ * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ */
+
+
+.articleGgallery.table-layout.table-vertical{
+  .col-image{
+    width: 10%;
+    .image{
+      min-width: 100px;
+      min-height: 100px;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+}
+
+// .thumbSlide-gallery{
+//   .swiper-container {
+//     width: 100%;
+//     margin-left: auto;
+//     margin-right: auto;
+//     .swiper-slide {
+//       background-size: cover;
+//       background-position: center;
+//       position: relative;
+//       a{
+//         text-decoration: none;
+//       }
+//       a.magnific-overlay{
+//         position: absolute;
+//         width: 100%;
+//         height: 100%;
+//         top: 0;
+//         left: 0;
+//       }
+//     }
+//
+//     &.top {
+//       .swiper-slide{
+//         height: 300px;
+//       }
+//     }
+//     &.thumbs {
+//       box-sizing: border-box;
+//       padding: 10px 0;
+//       .swiper-slide{
+//         height: 50px;
+//         width: 15%;
+//         opacity: 0.4;
+//         &.swiper-slide-active{
+//           opacity: 1;
+//         }
+//       }
+//     }
+//
+//
+//   }
+// }
